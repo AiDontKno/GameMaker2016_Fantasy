@@ -25,6 +25,40 @@
         <arguments>
           <argument>
             <kind>1</kind>
+            <string>///Create Grid
+cell_width = 32
+cell_height = 32
+
+hcells = room_width div cell_width
+vcells = room_height div cell_height
+
+global.grid = mp_grid_create(0,0,hcells,vcells,cell_width,cell_height)
+mp_grid_add_instances(global.grid,objEnemy1,false)
+mp_grid_add_instances(global.grid,objEnemy2,false)
+mp_grid_add_instances(global.grid,objEnemy3,false)
+mp_grid_add_instances(global.grid,objEnemy4,false)
+mp_grid_add_instances(global.grid,objEnemy5,false)
+mp_grid_add_instances(global.grid,objEnemy6,false)
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
             <string>///Variables
 //instance_create(x,y,objViewFinder) //for following player
 global.MovementAllow = false
@@ -78,7 +112,158 @@ yy = y;
         yl = 69
 
         
+global.enemyPos[1,1] = 160
+global.enemyPos[1,2] = 180
 
+global.enemyPos[2,1] = 200
+global.enemyPos[2,2] = 90
+
+global.enemyPos[3,1] = 120
+global.enemyPos[3,2] = 270
+
+global.enemyPos[4,1] = 80
+global.enemyPos[4,2] = 180
+
+global.enemyPos[5,1] = 120
+global.enemyPos[5,2] = 90
+
+global.enemyPos[6,1] = 40
+global.enemyPos[6,2] = 270
+
+global.allyPos[1,1] = 460
+global.allyPos[1,2] = 90
+
+global.allyPos[2,1] = 540
+global.allyPos[2,2] = 270
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="3" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Spawning
+/*
+if room = rm_Fight{
+        objAlly1.x = global.allyPos[1,1]
+        objAlly1.y = global.allyPos[1,2]
+
+        objAlly2.x = global.allyPos[2,1]
+        objAlly2.y = global.allyPos[2,2]
+        
+        objPlayer.x = 500
+        objPlayer.y = 180
+        
+        objEnemy1.x = global.enemyPos[1,1]
+        objEnemy1.y = global.enemyPos[1,2]
+        
+        objEnemy2.x = global.enemyPos[2,1]
+        objEnemy2.y = global.enemyPos[2,2]
+        
+        objEnemy3.x = global.enemyPos[3,1]
+        objEnemy3.y = global.enemyPos[3,2]
+        
+        objEnemy4.x = global.enemyPos[4,1]
+        objEnemy4.y = global.enemyPos[4,2]
+        
+        objEnemy5.x = global.enemyPos[5,1]
+        objEnemy5.y = global.enemyPos[5,2]
+        
+        objEnemy6.x = global.enemyPos[6,1]
+        objEnemy6.y = global.enemyPos[6,2]
+
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="4">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Spawning
+if room = rm_Fight{
+        objAlly1.x = global.allyPos[1,1]
+        objAlly1.y = global.allyPos[1,2]
+
+        objAlly2.x = global.allyPos[2,1]
+        objAlly2.y = global.allyPos[2,2]
+        
+        objPlayer.x = 500
+        objPlayer.y = 180
+        
+        objEnemy1.x = global.enemyPos[1,1]
+        objEnemy1.y = global.enemyPos[1,2]
+        
+        objEnemy2.x = global.enemyPos[2,1]
+        objEnemy2.y = global.enemyPos[2,2]
+        
+        objEnemy3.x = global.enemyPos[3,1]
+        objEnemy3.y = global.enemyPos[3,2]
+        
+        objEnemy4.x = global.enemyPos[4,1]
+        objEnemy4.y = global.enemyPos[4,2]
+        
+        objEnemy5.x = global.enemyPos[5,1]
+        objEnemy5.y = global.enemyPos[5,2]
+        
+        objEnemy6.x = global.enemyPos[6,1]
+        objEnemy6.y = global.enemyPos[6,2]
+
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="3">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Grid Destroy
+mp_grid_destroy(global.grid)
 </string>
           </argument>
         </arguments>
@@ -107,7 +292,7 @@ Z -= 1
 if Z &lt;= 0 
 {
     if room = rmINI room_goto_next()
-    instance_activate_object(objPlayerTest) //Player
+    instance_activate_object(objPlayer) //Player
 }
 //roomCorners and disabling far away objects
 x = view_xview[0]
@@ -117,7 +302,7 @@ yZ = y+view_hview[0]
 instance_deactivate_region(x,y,xZ,yZ, false, true);
 instance_activate_region(view_xview[0], view_yview[0], view_wview[0], view_hview[0], true);
 //Nessasary Objects are activated here
-instance_activate_object(objPlayerTest) //Player
+instance_activate_object(objPlayer) //Player
 instance_activate_object(objRoomTransfer)
 //Debug
 if Pause = false

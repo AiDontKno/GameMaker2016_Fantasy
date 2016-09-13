@@ -25,13 +25,14 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>weapon = "null"
+            <string>level = noone
+xp = 0
+xpcap = 0
+
+weapon = "null"
 class = "null"
 
 
-level = 0
-xp = 0
-xpcap = 0
 
 
 hp = 5
@@ -64,7 +65,7 @@ def = 0
           <argument>
             <kind>1</kind>
             <string>///Leveling
-
+var level = 0
 if level = 1 xpcap = 200
 if level = 2 xpcap = 500
 if level = 3 xpcap = 1000

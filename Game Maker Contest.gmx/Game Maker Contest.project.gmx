@@ -10,17 +10,48 @@
     <sprite>sprites\sprAlly1</sprite>
     <sprite>sprites\sprAlly2</sprite>
     <sprite>sprites\sprAlly3</sprite>
+    <sprite>sprites\sprEnemy1</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
+  <scripts name="scripts">
+    <script>scripts\scrSaveFunc.gml</script>
+    <script>scripts\scrLoadFunc.gml</script>
+  </scripts>
+  <fonts name="fonts">
+    <font>fonts\fntTextBox</font>
+  </fonts>
   <objects name="objects">
-    <object>objects\objPlayer</object>
-    <object>objects\objAllyParent</object>
-    <object>objects\objAlly1</object>
-    <object>objects\objWeaponMaster</object>
+    <object>objects\objRoomTransfer</object>
+    <object>objects\objMasterController</object>
+    <objects name="Player">
+      <object>objects\objPlayer</object>
+      <object>objects\objWeaponMaster</object>
+    </objects>
+    <objects name="Allies">
+      <object>objects\objAlly1</object>
+      <object>objects\objAlly2</object>
+      <object>objects\objAllyParent</object>
+    </objects>
+    <objects name="Enemies">
+      <object>objects\objEnemyParent</object>
+      <object>objects\objEnemyMove</object>
+      <object>objects\objEnemyFightParent</object>
+      <objects name="Enemy Objects">
+        <object>objects\objEnemy1</object>
+        <object>objects\objEnemy2</object>
+        <object>objects\objEnemy3</object>
+        <object>objects\objEnemy4</object>
+        <object>objects\objEnemy5</object>
+        <object>objects\objEnemy6</object>
+      </objects>
+    </objects>
   </objects>
   <rooms name="rooms">
+    <room>rooms\rmINI</room>
+    <room>rooms\rmMainMenu</room>
     <room>rooms\room0</room>
+    <room>rooms\rm_Fight</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>

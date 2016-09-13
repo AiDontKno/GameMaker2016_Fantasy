@@ -3,7 +3,7 @@
   <spriteName>&lt;undefined&gt;</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>-1079550693</depth>
+  <depth>0</depth>
   <persistent>-1</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -25,16 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>randomize()
-Al = 0.001
-targetRoom = room
-Load = 0
-
-     Down = 0
-     Delta = "Loading Region"
-     image_speed = 0.1
-     i = 0 
-     Zed = false
+            <string>a = irandom_range(1,6)
 </string>
           </argument>
         </arguments>
@@ -57,54 +48,12 @@ Load = 0
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>image_speed = random_range(0,0.1)
-draw_set_colour(c_black);
-draw_set_alpha(.5);
-//draw_rectangle(view_xview,view_yview,view_xview+120,view_yview+11,false);
-draw_set_alpha(Al);
-draw_rectangle(view_xview-16,view_yview-16,view_xview+view_wview+16,view_yview+view_hview+16,false);
-if Zed = true instance_deactivate_all(true)
-if Al &gt;= 1
-    {
-        if room_previous(rmINI) targetRoom = room
-        if targetRoom != "NEXT" and targetRoom != "PREVIOUS"
-        { 
-            room_goto(targetRoom);
-        }else if targetRoom = "NEXT"
-        {
-            room_goto_next()
-        }else if targetRoom = "PREVIOUS"
-        {
-            room_goto_previous()
-        }
-        Al = 1;
-        Down = -1;
-        Zed = true
-    }
-if Down = -1 and Load = 0 Down = 1
-else if Down = -1 and Load &gt; 0
-{
-    if i &lt; .125 i = 0
-    if i &gt; 7 i = 0
-    Al = 0.999
-    Load -= 1
-    if Load &lt;= 0 Down = 1
-        
-        draw_set_alpha(Al*2)
-        draw_set_colour(c_white)
-        draw_set_halign(fa_left)
-        draw_set_valign(fa_top)
-        draw_set_font(fntTextBox)
-        draw_text(view_xview+view_wview-string_width(Delta)-30,view_yview+view_hview-20,Delta)
-        if sprite_exists(sptLoad) draw_sprite_ext(sptLoad,i,view_xview+view_wview-20,view_yview+view_hview-20,.5,.5,0,-1,Al*2)
-        i += .125
-}
-
-if Down = 1 Al -= 0.035;
-else if Down = 0 Al += 0.035;
-if Al &lt;= 0.99 instance_activate_all()
-if Al &lt;= 0 instance_destroy()
-draw_set_alpha(1)
+            <string>if a = 1 draw_sprite_ext(sprEnemy1,0,x,y,1,1,0,c_blue,1)
+if a = 2 draw_sprite_ext(sprEnemy1,0,x,y,1,1,0,c_red,1)
+if a = 3 draw_sprite_ext(sprEnemy1,0,x,y,1,1,0,c_green,1)
+if a = 4 draw_sprite_ext(sprEnemy1,0,x,y,1,1,0,c_yellow,1)
+if a = 5 draw_sprite_ext(sprEnemy1,0,x,y,1,1,0,c_fuchsia,1)
+if a = 6 draw_sprite_ext(sprEnemy1,0,x,y,1,1,0,c_purple,1)
 </string>
           </argument>
         </arguments>
