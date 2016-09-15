@@ -26,19 +26,16 @@
           <argument>
             <kind>1</kind>
             <string>///Create Grid
-cell_width = 32
-cell_height = 32
+var cell_width = 16
+var cell_height = 16
 
-hcells = room_width div cell_width
-vcells = room_height div cell_height
+var hcells = room_width div cell_width
+var vcells = room_height div cell_height
+
 
 global.grid = mp_grid_create(0,0,hcells,vcells,cell_width,cell_height)
-mp_grid_add_instances(global.grid,objEnemy1,false)
-mp_grid_add_instances(global.grid,objEnemy2,false)
-mp_grid_add_instances(global.grid,objEnemy3,false)
-mp_grid_add_instances(global.grid,objEnemy4,false)
-mp_grid_add_instances(global.grid,objEnemy5,false)
-mp_grid_add_instances(global.grid,objEnemy6,false)
+
+
 </string>
           </argument>
         </arguments>
@@ -188,6 +185,34 @@ if room = rm_Fight{
         objEnemy6.y = global.enemyPos[6,2]
 
 }
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Add things to grid
+mp_grid_clear_all(global.grid)
+mp_grid_add_instances(global.grid,objEnemy1,false)
+mp_grid_add_instances(global.grid,objEnemy2,false)
+mp_grid_add_instances(global.grid,objEnemy3,false)
+mp_grid_add_instances(global.grid,objEnemy4,false)
+mp_grid_add_instances(global.grid,objEnemy5,false)
+mp_grid_add_instances(global.grid,objEnemy6,false)
 </string>
           </argument>
         </arguments>
