@@ -34,8 +34,10 @@ var vcells = room_height div cell_height
 
 
 global.grid = mp_grid_create(0,0,hcells,vcells,cell_width,cell_height)
-
-
+global.enemyFightF = mp_grid_create(0,0,hcells,vcells,cell_width,cell_height)
+global.enemyFight1 = mp_grid_create(0,0,hcells,vcells,cell_width,cell_height)
+global.enemyFight4 = mp_grid_create(0,0,hcells,vcells,cell_width,cell_height)
+global.enemyFight7 = mp_grid_create(0,0,hcells,vcells,cell_width,cell_height)
 </string>
           </argument>
         </arguments>
@@ -57,14 +59,22 @@ global.grid = mp_grid_create(0,0,hcells,vcells,cell_width,cell_height)
           <argument>
             <kind>1</kind>
             <string>///Variables
-//instance_create(x,y,objViewFinder) //for following player
+instance_create(x,y,objViewFinder) //for following player
 global.MovementAllow = false
 global.Notifx = 0
 global.Notify = 0
+global.attacker = 1
 Z = 0
+roomt = true
+tutorial = false
+mountain = false
+meadow = false
+outsideCastle = false
+throne = false
 Pause = false
 quitting = false
 Set = 0
+check = false
 SetQ = 0
 MAX = 0
 Bcar0 = true
@@ -109,29 +119,64 @@ yy = y;
         yl = 69
 
         
-global.enemyPos[1,1] = 160
-global.enemyPos[1,2] = 180
+global.enemyPos[1,1] = 120
+global.enemyPos[1,2] = 70 //90
 
 global.enemyPos[2,1] = 200
-global.enemyPos[2,2] = 90
-
-global.enemyPos[3,1] = 120
-global.enemyPos[3,2] = 270
-
-global.enemyPos[4,1] = 80
-global.enemyPos[4,2] = 180
-
-global.enemyPos[5,1] = 120
-global.enemyPos[5,2] = 90
-
-global.enemyPos[6,1] = 40
-global.enemyPos[6,2] = 270
+global.enemyPos[2,2] = 70 //90
 
 global.allyPos[1,1] = 460
-global.allyPos[1,2] = 90
+global.allyPos[1,2] = 70 //90
 
-global.allyPos[2,1] = 540
-global.allyPos[2,2] = 270
+global.enemyPos[3,1] = 80
+global.enemyPos[3,2] = 160 //180
+
+global.enemyPos[4,1] = 160
+global.enemyPos[4,2] = 160 //180
+
+global.allyPos[2,1] = 500 
+global.allyPos[2,2] = 160 //180
+
+global.enemyPos[5,1] = 40
+global.enemyPos[5,2] = 250 //270
+
+global.enemyPos[6,1] = 120
+global.enemyPos[6,2] = 250 //270
+
+global.allyPos[3,1] = 540 
+global.allyPos[3,2] = 250 //270
+
+global.EnemyNumber = 0
+global.selection[1,0] = true
+global.selection[2,0] = true
+global.selection[3,0] = true
+global.selection[4,0] = true
+global.selection[5,0] = true
+global.selection[6,0] = true
+global.selection[7,0] = true
+global.selection[8,0] = true
+global.selection[9,0] = true
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>global.spawning = ds_grid_create(1280,720)
 </string>
           </argument>
         </arguments>
@@ -154,38 +199,7 @@ global.allyPos[2,2] = 270
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Spawning
-/*
-if room = rm_Fight{
-        objAlly1.x = global.allyPos[1,1]
-        objAlly1.y = global.allyPos[1,2]
-
-        objAlly2.x = global.allyPos[2,1]
-        objAlly2.y = global.allyPos[2,2]
-        
-        objPlayer.x = 500
-        objPlayer.y = 180
-        
-        objEnemy1.x = global.enemyPos[1,1]
-        objEnemy1.y = global.enemyPos[1,2]
-        
-        objEnemy2.x = global.enemyPos[2,1]
-        objEnemy2.y = global.enemyPos[2,2]
-        
-        objEnemy3.x = global.enemyPos[3,1]
-        objEnemy3.y = global.enemyPos[3,2]
-        
-        objEnemy4.x = global.enemyPos[4,1]
-        objEnemy4.y = global.enemyPos[4,2]
-        
-        objEnemy5.x = global.enemyPos[5,1]
-        objEnemy5.y = global.enemyPos[5,2]
-        
-        objEnemy6.x = global.enemyPos[6,1]
-        objEnemy6.y = global.enemyPos[6,2]
-
-}
-</string>
+            <string></string>
           </argument>
         </arguments>
       </action>
@@ -213,6 +227,33 @@ mp_grid_add_instances(global.grid,objEnemy3,false)
 mp_grid_add_instances(global.grid,objEnemy4,false)
 mp_grid_add_instances(global.grid,objEnemy5,false)
 mp_grid_add_instances(global.grid,objEnemy6,false)
+mp_grid_add_instances(global.grid,objCollision,false)
+mp_grid_add_instances(global.grid,objTree1,false)
+
+mp_grid_clear_all(global.enemyFight1)
+mp_grid_add_instances(global.enemyFight1,objEnemy2,false)
+mp_grid_add_instances(global.enemyFight1,objEnemy3,false)
+mp_grid_add_instances(global.enemyFight1,objEnemy4,false)
+mp_grid_add_instances(global.enemyFight1,objEnemy5,false)
+mp_grid_add_instances(global.enemyFight1,objEnemy6,false)
+
+mp_grid_clear_all(global.enemyFight4)
+mp_grid_add_instances(global.enemyFight4,objEnemy1,false)
+mp_grid_add_instances(global.enemyFight4,objEnemy2,false)
+mp_grid_add_instances(global.enemyFight4,objEnemy4,false)
+mp_grid_add_instances(global.enemyFight4,objEnemy5,false)
+mp_grid_add_instances(global.enemyFight4,objEnemy6,false)
+
+mp_grid_clear_all(global.enemyFight7)
+mp_grid_add_instances(global.enemyFight7,objEnemy1,false)
+mp_grid_add_instances(global.enemyFight7,objEnemy2,false)
+mp_grid_add_instances(global.enemyFight7,objEnemy3,false)
+mp_grid_add_instances(global.enemyFight7,objEnemy4,false)
+mp_grid_add_instances(global.enemyFight7,objEnemy6,false)
+
+mp_grid_clear_all(global.enemyFightF)
+
+
 </string>
           </argument>
         </arguments>
@@ -236,33 +277,75 @@ mp_grid_add_instances(global.grid,objEnemy6,false)
           <argument>
             <kind>1</kind>
             <string>///Spawning
-if room = rm_Fight{
+check = true
+if room = rmSplash and tutorial = true{
+    with instance_create(x,y,objRoomTransfer) targetRoom = rm_Tutorial
+}
+if room = rm_Tutorial and tutorial = false{
+    tutorial = true
+    objPlayer.x = 672
+    objPlayer.y = 3840
+}else if room = rm_Mountain and mountain = false{
+    mountain = true
+    objPlayer.x = 912
+    objPlayer.y = 3968
+}else if room = rm_meadow and meadow = false{
+    meadow = true
+    objPlayer.x = 1056
+    objPlayer.y = 3968
+}else if room = rm_OutsideCastle and outsideCastle = false{
+    outsideCastle = true
+    objPlayer.x = 1888
+    objPlayer.y = 3984
+}else if room = rm_Throne and throne = false{
+    throne = true
+    objPlayer.x = 144
+    objPlayer.y = 384
+}else{
+objPlayer.x = objPlayer.lastX
+objPlayer.y = objPlayer.lastY
+}
+
+
+if room = rm_MFight or room = rm_TutFight or room = rm_FightC or room = rm_FightIC{
+    roomt = true
+    if instance_exists(objAlly1){
         objAlly1.x = global.allyPos[1,1]
         objAlly1.y = global.allyPos[1,2]
-
-        objAlly2.x = global.allyPos[2,1]
-        objAlly2.y = global.allyPos[2,2]
-        
-        objPlayer.x = 500
-        objPlayer.y = 180
-        
+        }
+    if instance_exists(objAlly2){
+        objAlly2.x = global.allyPos[3,1]
+        objAlly2.y = global.allyPos[3,2]
+        }
+    if instance_exists(objPlayer){
+        objPlayer.x = global.allyPos[2,1]
+        objPlayer.y = global.allyPos[2,2]
+        }
+    if instance_exists(objEnemy1){    
         objEnemy1.x = global.enemyPos[1,1]
         objEnemy1.y = global.enemyPos[1,2]
-        
+        }
+    if instance_exists(objEnemy2){   
         objEnemy2.x = global.enemyPos[2,1]
         objEnemy2.y = global.enemyPos[2,2]
-        
+        }
+    if instance_exists(objEnemy3){    
         objEnemy3.x = global.enemyPos[3,1]
         objEnemy3.y = global.enemyPos[3,2]
-        
+        }
+    if instance_exists(objEnemy4){    
         objEnemy4.x = global.enemyPos[4,1]
         objEnemy4.y = global.enemyPos[4,2]
-        
+        }
+    if instance_exists(objEnemy5){    
         objEnemy5.x = global.enemyPos[5,1]
         objEnemy5.y = global.enemyPos[5,2]
-        
+        }
+    if instance_exists(objEnemy6){    
         objEnemy6.x = global.enemyPos[6,1]
         objEnemy6.y = global.enemyPos[6,2]
+        }
+
 
 }
 </string>
@@ -289,6 +372,59 @@ if room = rm_Fight{
             <kind>1</kind>
             <string>/// Grid Destroy
 mp_grid_destroy(global.grid)
+ds_grid_destroy(global.spawning)
+mp_grid_destroy(global.enemyFight1)
+mp_grid_destroy(global.enemyFight4)
+mp_grid_destroy(global.enemyFight7)
+mp_grid_destroy(global.enemyFightF)
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="77">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>shader_reset()
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="76">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>shader_set(sh_saturation)
+shader_set_uniform_f(shader_get_uniform(sh_saturation, "Position"), -0.4);
+shader_set(sh_saturation_new)
 </string>
           </argument>
         </arguments>
@@ -324,10 +460,13 @@ x = view_xview[0]
 y = view_yview[0]
 xZ = x+view_wview[0]
 yZ = y+view_hview[0]
-instance_deactivate_region(x,y,xZ,yZ, false, true);
-instance_activate_region(view_xview[0], view_yview[0], view_wview[0], view_hview[0], true);
+//instance_deactivate_region(x,y,xZ,yZ, false, true);
+//instance_activate_region(view_xview[0], view_yview[0], view_wview[0], view_hview[0], true);
 //Nessasary Objects are activated here
 instance_activate_object(objPlayer) //Player
+if instance_exists(objTree1){
+instance_activate_object(objTree1)
+}
 instance_activate_object(objRoomTransfer)
 //Debug
 if Pause = false
@@ -348,7 +487,55 @@ if Pause = false
             //Load = 480
         }
     }
+    
 }
+if room = rm_Tutorial and objPlayer.y &lt; 912{
+    objPlayer.y -= 915
+}
+if objMasterController.check = true and point_in_rectangle(objPlayer.x,objPlayer.y,608,1072,640,1088) and room = rm_Tutorial{
+     with objPlayer lastRoom = room_get_name(room)
+     with objPlayer lastX = x
+     with objPlayer lastY = y+5
+     with instance_create(x,y,objRoomTransfer) targetRoom = rm_tavern
+}
+if objMasterController.check = true and point_in_rectangle(objPlayer.x,objPlayer.y,544,2320,576,2336) and room = rm_meadow{
+     with objPlayer lastRoom = room_get_name(room)
+     with objPlayer lastX = x
+     with objPlayer lastY = y+5
+     with instance_create(x,y,objRoomTransfer) targetRoom = rm_tavern
+}
+if objMasterController.check = true and point_in_rectangle(objPlayer.x,objPlayer.y,256,2672,288,2688) and room = rm_Mountain{
+     with objPlayer lastRoom = room_get_name(room)
+     with objPlayer lastX = x
+     with objPlayer lastY = y+5
+     with instance_create(x,y,objRoomTransfer) targetRoom = rm_tavern
+}
+if objMasterController.check = true and point_in_rectangle(objPlayer.x,objPlayer.y,3424,2800,3456,2816) and room = rm_OutsideCastle{
+     with objPlayer lastRoom = room_get_name(room)
+     with objPlayer lastX = x
+     with objPlayer lastY = y+5
+     with instance_create(x,y,objRoomTransfer) targetRoom = rm_tavern
+}
+if objMasterController.check = true and (objPlayer.y &lt; 1  ) {
+    objMasterController.check = false
+
+    with instance_create(x,y,objRoomTransfer){
+        if room = rm_Tutorial{
+            targetRoom = rm_Mountain   
+        }
+        if room = rm_Mountain{
+            targetRoom = rm_meadow
+        }
+        if room = rm_meadow{
+            targetRoom = rm_OutsideCastle
+        }
+        if room = rm_OutsideCastle{
+            targetRoom = rm_Throne
+        }
+    }
+}
+
+
 //Pause Handle
         if quitting = true b = 1
         else b = 0
@@ -709,6 +896,40 @@ if Pause = true
             a = 0
         }
 //----//
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///global attacker
+if Pause = false{
+if objPlayer.attacking = true{
+    global.attacker = 2
+}   
+
+if objAlly1.attacking = true{
+    global.attacker = 1
+}
+
+if objAlly2.attacking = true{
+    global.attacker = 3
+}
+}
 </string>
           </argument>
         </arguments>

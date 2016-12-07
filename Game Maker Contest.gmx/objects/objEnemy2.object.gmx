@@ -25,7 +25,392 @@
         <arguments>
           <argument>
             <kind>1</kind>
+            <string>event_inherited()
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
             <string>a = irandom_range(1,6)
+enemyClass = "null"
+num = 2
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="1" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>global.selection[2,0] = false
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="3" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>event_inherited()
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="7">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>event_inherited()
+/*if self.object_index = objEnemy1{
+if sprite_index = sprMouseAttack{
+    sprite_index = sprMouseIdle
+    if (mp_grid_path(global.enemyFight1,ai,x,y,xPos,yPos,1)) &amp;&amp; attacking = false
+        {
+            path_start(ai,3,0,0)
+            attacked = true
+        }
+}
+if sprite_index = sprWraithAttack{
+    sprite_index = sprWraithIdle
+    if (mp_grid_path(global.enemyFight1,ai,x,y,xPos,yPos,1)) &amp;&amp; attacking = false
+        {
+            path_start(ai,3,0,0)
+            attacked = true
+        } 
+}         
+if sprite_index = sprWraithAttack{
+    sprite_index = sprWraithIdle
+    if (mp_grid_path(global.enemyFight1,ai,x,y,xPos,yPos,1)) &amp;&amp; attacking = false
+        {
+            path_start(ai,3,0,0)
+            attacked = true
+        }
+}
+}
+if self.object_index = objEnemy2{
+if sprite_index = sprMouseAttack{
+    sprite_index = sprMouseIdle
+    if (mp_grid_path(global.enemyFightF,ai,x,y,xPos,yPos,1)) &amp;&amp; attacking = false
+        {
+            path_start(ai,3,0,0)
+            attacked = true
+        }
+}
+if sprite_index = sprWraithAttack{
+    sprite_index = sprWraithIdle
+    if (mp_grid_path(global.enemyFightF,ai,x,y,xPos,yPos,1)) &amp;&amp; attacking = false
+        {
+            path_start(ai,3,0,0)
+            attacked = true
+        }
+} 
+}
+if self.object_index = objEnemy3{
+if sprite_index = sprMouseAttack{
+    sprite_index = sprMouseIdle
+    if (mp_grid_path(global.enemyFight4,ai,x,y,xPos,yPos,1)) &amp;&amp; attacking = false
+        {
+            path_start(ai,3,0,0)
+            attacked = true
+        }
+}
+if sprite_index = sprWraithAttack{
+    sprite_index = sprWraithIdle
+    if (mp_grid_path(global.enemyFight4,ai,x,y,xPos,yPos,1)) &amp;&amp; attacking = false
+        {
+            path_start(ai,3,0,0)
+            attacked = true
+        }
+} 
+}
+if self.object_index = objEnemy4{
+if sprite_index = sprMouseAttack{
+    sprite_index = sprMouseIdle
+    if (mp_grid_path(global.enemyFightF,ai,x,y,xPos,yPos,1)) &amp;&amp; attacking = false
+        {
+            path_start(ai,3,0,0)
+            attacked = true
+        }
+}
+if sprite_index = sprWraithAttack{
+    sprite_index = sprWraithIdle
+    if (mp_grid_path(global.enemyFightF,ai,x,y,xPos,yPos,1)) &amp;&amp; attacking = false
+        {
+            path_start(ai,3,0,0)
+            attacked = true
+        }
+} 
+}
+if self.object_index = objEnemy5{
+if sprite_index = sprMouseAttack{
+    sprite_index = sprMouseIdle
+    if (mp_grid_path(global.enemyFight7,ai,x,y,xPos,yPos,1)) &amp;&amp; attacking = false
+        {
+            path_start(ai,3,0,0)
+            attacked = true
+        }
+}
+if sprite_index = sprWraithAttack{
+    sprite_index = sprWraithIdle
+    if (mp_grid_path(global.enemyFight7,ai,x,y,xPos,yPos,1)) &amp;&amp; attacking = false
+        {
+            path_start(ai,3,0,0)
+            attacked = true
+        }
+} 
+}
+if self.object_index = objEnemy6{
+if sprite_index = sprMouseAttack{
+    sprite_index = sprMouseIdle
+    if (mp_grid_path(global.enemyFightF,ai,x,y,xPos,yPos,1)) &amp;&amp; attacking = false
+        {
+            path_start(ai,3,0,0)
+            attacked = true
+            image_speed = 0.3
+        }
+}
+if sprite_index = sprWraithAttack{
+    sprite_index = sprWraithIdle
+    if (mp_grid_path(global.enemyFightF,ai,x,y,xPos,yPos,1)) &amp;&amp; attacking = false
+        {
+            path_start(ai,3,0,0)
+            attacked = true
+        }
+} 
+}
+event_inherited()
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="5">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>event_inherited()
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="4">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if room = rm_MFight or room = rm_TutFight or room = rm_FightC or room = rm_FightIC{
+    if enemyClass = "null"{
+        global.selection[2,0] = false
+    }else global.selection[2,0] = true
+}
+event_inherited()
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Move to Enemy
+/*
+if room = rm_Fight{
+randomize()
+if x = xx - 40 &amp;&amp; y = yy &amp;&amp; attacking = false{
+    sprite_index = sprPlayerAtck
+}    
+    if (x = xPos &amp;&amp; y = yPos &amp;&amp; timeAttack = true ){
+        attacking = true
+    }else attacking = false
+if attacking = true{
+    if global.selection[3,0] = true and global.selection[6,0] = true and global.selection[9,0] = true{
+    b = irandom_range(1,3)
+    xx = global.allyPos[b,1]
+    yy = global.allyPos[b,2]
+    }else if global.selection[3,0] = true and global.selection[6,0] = true{
+    b = irandom_range(1,2)
+    xx = global.allyPos[b,1]
+    yy = global.allyPos[b,2]
+    }else if global.selection[6,0] = true and global.selection[9,0] = true{
+    b = irandom_range(2,3)
+    xx = global.allyPos[b,1]
+    yy = global.allyPos[b,2]
+    }else if global.selection[6,0] = true{
+    b = 2
+    xx = global.allyPos[b,1]
+    yy = global.allyPos[b,2]
+    }
+
+    
+}
+if self.object_index = objEnemy1{
+    if attacking = true{
+        if mp_grid_path(global.enemyFight1,ai,x,y,xx - 40,yy,1){
+            path_start(ai,3,0,0)
+            time = 0    
+            }
+    }   
+}
+if self.object_index = objEnemy2{
+    if attacking = true{
+        if mp_grid_path(global.enemyFight1,ai,x,y,xx - 40,yy,1){
+            path_start(ai,3,0,0)
+            time = 0    
+            }
+    }   
+}
+if self.object_index = objEnemy3{
+    if attacking = true{
+        if mp_grid_path(global.enemyFight4,ai,x,y,xx - 40,yy,1){
+            path_start(ai,3,0,0)
+            time = 0    
+            }
+    }   
+}
+if self.object_index = objEnemy4{
+    if attacking = true{
+        if mp_grid_path(global.enemyFight1,ai,x,y,xx - 40,yy,1){
+            path_start(ai,3,0,0)
+            time = 0    
+            }
+    }   
+}
+if self.object_index = objEnemy5{
+    if attacking = true{
+        if mp_grid_path(global.enemyFight7,ai,x,y,xx - 40,yy,1){
+            path_start(ai,3,0,0)
+            time = 0    
+            }
+    }   
+}
+if self.object_index = objEnemy6{
+    if attacking = true{
+        if mp_grid_path(global.enemyFight1,ai,x,y,xx - 40,yy,1){
+            path_start(ai,3,0,0)
+            time = 0    
+            }
+    }   
+}
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>event_inherited()
 </string>
           </argument>
         </arguments>

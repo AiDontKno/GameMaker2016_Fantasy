@@ -4,7 +4,7 @@
   <solid>0</solid>
   <visible>-1</visible>
   <depth>0</depth>
-  <persistent>0</persistent>
+  <persistent>-1</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
@@ -28,138 +28,490 @@
             <string>///Weapons
 
 //Sword
-FighterWeapon[1,0] = 0 //Level
-FighterWeapon[1,1] = 0 //HP
-FighterWeapon[1,2] = 0 //MP
+FighterWeapon[1,0] = 1 //Level
+FighterWeapon[1,1] = 2 //HP
+FighterWeapon[1,2] = 3 //MP
 FighterWeapon[1,3] = 4 //STR
-FighterWeapon[1,4] = 0 //INT
-FighterWeapon[1,5] = 2 //ACC
-FighterWeapon[1,6] = -1 //DEX
+FighterWeapon[1,4] = 5 //INT
+FighterWeapon[1,5] = 6 //ACC
+FighterWeapon[1,6] = 7 //DEX
 //Axe
-FighterWeapon[2,0] = 0 //Level
-FighterWeapon[2,1] = 3 //HP
-FighterWeapon[2,2] = 0 //MP
-FighterWeapon[2,3] = 6 //STR
-FighterWeapon[2,4] = 0 //INT
-FighterWeapon[2,5] = -2 //ACC
-FighterWeapon[2,6] = -2 //DEX
+FighterWeapon[2,0] = 8 //Level
+FighterWeapon[2,1] = 9 //HP
+FighterWeapon[2,2] = 10 //MP
+FighterWeapon[2,3] = 11//STR
+FighterWeapon[2,4] = 12 //INT
+FighterWeapon[2,5] = 13 //ACC
+FighterWeapon[2,6] = 14 //DEX
 //Javalin
-FighterWeapon[3,0] = 0 //Level
-FighterWeapon[3,1] = 4 //HP
-FighterWeapon[3,2] = 0 //MP
-FighterWeapon[3,3] = 5 //STR
-FighterWeapon[3,4] = 0 //INT
-FighterWeapon[3,5] = -2 //ACC
-FighterWeapon[3,6] = 0 //DEX
+FighterWeapon[3,0] = 15 //Level
+FighterWeapon[3,1] = 16 //HP
+FighterWeapon[3,2] = 17 //MP
+FighterWeapon[3,3] = 18 //STR
+FighterWeapon[3,4] = 19 //INT
+FighterWeapon[3,5] = 20 //ACC
+FighterWeapon[3,6] = 21 //DEX
 
 
 //Staff
-MageWeapon[1,0] = 0 //Level
-MageWeapon[1,1] = 0 //HP
-MageWeapon[1,2] = 4 //MP
-MageWeapon[1,3] = 3 //STR
-MageWeapon[1,4] = 1 //INT
-MageWeapon[1,5] = -1 //ACC
-MageWeapon[1,6] = -2 //DEX
+MageWeapon[1,0] = 22 //Level
+MageWeapon[1,1] = 23 //HP
+MageWeapon[1,2] = 24 //MP
+MageWeapon[1,3] = 25 //STR
+MageWeapon[1,4] = 26 //INT
+MageWeapon[1,5] = 27 //ACC
+MageWeapon[1,6] = 28 //DEX
 //Wand
-MageWeapon[2,0] = 0 //Level
-MageWeapon[2,1] = 0 //HP
-MageWeapon[2,2] = 3 //MP
-MageWeapon[2,3] = 1 //STR
-MageWeapon[2,4] = 3 //INT
-MageWeapon[2,5] = -1 //ACC
-MageWeapon[2,6] = -1 //DEX
+MageWeapon[2,0] = 29 //Level
+MageWeapon[2,1] = 30 //HP
+MageWeapon[2,2] = 31 //MP
+MageWeapon[2,3] = 32 //STR
+MageWeapon[2,4] = 33 //INT
+MageWeapon[2,5] = 34 //ACC
+MageWeapon[2,6] = 35 //DEX
 //Tome
-MageWeapon[3,0] = 0 //Level
-MageWeapon[3,1] = 0 //HP
-MageWeapon[3,2] = 5 //MP
-MageWeapon[3,3] = 0 //STR
-MageWeapon[3,4] = 4 //INT
-MageWeapon[3,5] = -2 //ACC
-MageWeapon[3,6] = -2 //DEX
+MageWeapon[3,0] = 36 //Level
+MageWeapon[3,1] = 37 //HP
+MageWeapon[3,2] = 38 //MP
+MageWeapon[3,3] = 39 //STR
+MageWeapon[3,4] = 40 //INT
+MageWeapon[3,5] = 41 //ACC
+MageWeapon[3,6] = 42 //DEX
 
 
 //Harp
-BardWeapon[1,0] = 0 //Level
-BardWeapon[1,1] = 0 //HP
-BardWeapon[1,2] = 2 //MP
-BardWeapon[1,3] = 0 //STR
-BardWeapon[1,4] = 4 //INT
-BardWeapon[1,5] = 0 //ACC
-BardWeapon[1,6] = -1 //DEX
+BardWeapon[1,0] = 43 //Level
+BardWeapon[1,1] = 44 //HP
+BardWeapon[1,2] = 45 //MP
+BardWeapon[1,3] = 46 //STR
+BardWeapon[1,4] = 47 //INT
+BardWeapon[1,5] = 48 //ACC
+BardWeapon[1,6] = 49 //DEX
 //Flute
-BardWeapon[2,0] = 0 //Level
-BardWeapon[2,1] = 0 //HP
-BardWeapon[2,2] = 4 //MP
-BardWeapon[2,3] = 0 //STR
-BardWeapon[2,4] = 2 //INT
-BardWeapon[2,5] = 0 //ACC
-BardWeapon[2,6] = -1 //DEX
+BardWeapon[2,0] = 50 //Level
+BardWeapon[2,1] = 51 //HP
+BardWeapon[2,2] = 52 //MP
+BardWeapon[2,3] = 53 //STR
+BardWeapon[2,4] = 54 //INT
+BardWeapon[2,5] = 55 //ACC
+BardWeapon[2,6] = 56 //DEX
 //Ukelele
-BardWeapon[3,0] = 0 //Level
-BardWeapon[3,1] = 0 //HP
-BardWeapon[3,2] = 2 //MP
-BardWeapon[3,3] = 1 //STR
-BardWeapon[3,4] = 4 //INT
-BardWeapon[3,5] = 0 //ACC
-BardWeapon[3,6] = -2 //DEX
+BardWeapon[3,0] = 57 //Level
+BardWeapon[3,1] = 58 //HP
+BardWeapon[3,2] = 59 //MP
+BardWeapon[3,3] = 60 //STR
+BardWeapon[3,4] = 61 //INT
+BardWeapon[3,5] = 62 //ACC
+BardWeapon[3,6] = 63 //DEX
 
 
 
 
 //Longbow
-ArcherWeapon[1,0] = 0 //Level
-ArcherWeapon[1,1] = 0 //HP
-ArcherWeapon[1,2] = 0 //MP
-ArcherWeapon[1,3] = 4 //STR
-ArcherWeapon[1,4] = 0 //INT
-ArcherWeapon[1,5] = 4 //ACC
-ArcherWeapon[1,6] = -3 //DEX
+ArcherWeapon[1,0] = 64 //Level
+ArcherWeapon[1,1] = 65 //HP
+ArcherWeapon[1,2] = 66 //MP
+ArcherWeapon[1,3] = 67 //STR
+ArcherWeapon[1,4] = 68 //INT
+ArcherWeapon[1,5] = 69 //ACC
+ArcherWeapon[1,6] = 70 //DEX
 //Shortbow
-ArcherWeapon[2,0] = 0 //Level
-ArcherWeapon[2,1] = 0 //HP
-ArcherWeapon[2,2] = 0 //MP
-ArcherWeapon[2,3] = 2 //STR
-ArcherWeapon[2,4] = 0 //INT
-ArcherWeapon[2,5] = 4 //ACC
-ArcherWeapon[2,6] = -1 //DEX
+ArcherWeapon[2,0] = 71 //Level
+ArcherWeapon[2,1] = 72 //HP
+ArcherWeapon[2,2] = 73 //MP
+ArcherWeapon[2,3] = 74 //STR
+ArcherWeapon[2,4] = 75 //INT
+ArcherWeapon[2,5] = 76 //ACC
+ArcherWeapon[2,6] = 77 //DEX
 //Crossbow
-ArcherWeapon[3,0] = 0 //Level
-ArcherWeapon[3,1] = 0 //HP
-ArcherWeapon[3,2] = 0 //MP
-ArcherWeapon[3,3] = 3 //STR
-ArcherWeapon[3,4] = 0 //INT
-ArcherWeapon[3,5] = 3 //ACC
-ArcherWeapon[3,6] = -1 //DEX
+ArcherWeapon[3,0] = 78 //Level
+ArcherWeapon[3,1] = 79 //HP
+ArcherWeapon[3,2] = 80 //MP
+ArcherWeapon[3,3] = 81 //STR
+ArcherWeapon[3,4] = 90 //INT
+ArcherWeapon[3,5] = 91 //ACC
+ArcherWeapon[3,6] = 92 //DEX
 
 
 //Dagger
-RogueWeapon[1,0] = 0 //Level
-RogueWeapon[1,1] = 0 //HP
-RogueWeapon[1,2] = 0 //MP
-RogueWeapon[1,3] = 3 //STR
-RogueWeapon[1,4] = 0 //INT
-RogueWeapon[1,5] = 3 //ACC
-RogueWeapon[1,6] = -1 //DEX
+RogueWeapon[1,0] = 93 //Level
+RogueWeapon[1,1] = 94 //HP
+RogueWeapon[1,2] = 95 //MP
+RogueWeapon[1,3] = 96 //STR
+RogueWeapon[1,4] = 97 //INT
+RogueWeapon[1,5] = 98 //ACC
+RogueWeapon[1,6] = 99 //DEX
 //BoStaff
-RogueWeapon[2,0] = 0 //Level
-RogueWeapon[2,1] = 0 //HP
-RogueWeapon[2,2] = 0 //MP
-RogueWeapon[2,3] = 2 //STR
-RogueWeapon[2,4] = 0 //INT
-RogueWeapon[2,5] = 5 //ACC
-RogueWeapon[2,6] = -2 //DEX
+RogueWeapon[2,0] = 100 //Level
+RogueWeapon[2,1] = 101 //HP
+RogueWeapon[2,2] = 102 //MP
+RogueWeapon[2,3] = 103 //STR
+RogueWeapon[2,4] = 104 //INT
+RogueWeapon[2,5] = 105 //ACC
+RogueWeapon[2,6] = 106 //DEX
 //Nunchucks
 
-RogueWeapon[3,0] = 0 //Level
-RogueWeapon[3,1] = 0 //HP
-RogueWeapon[3,2] = 0 //MP
-RogueWeapon[3,3] = 1 //STR
-RogueWeapon[3,4] = 0 //INT
-RogueWeapon[3,5] = 5 //ACC
-RogueWeapon[3,6] = -1 //DEX
+RogueWeapon[3,0] = 107 //Level
+RogueWeapon[3,1] = 108 //HP
+RogueWeapon[3,2] = 109 //MP
+RogueWeapon[3,3] = 110 //STR
+RogueWeapon[3,4] = 111 //INT
+RogueWeapon[3,5] = 112 //ACC
+RogueWeapon[3,6] = 113 //DEX
 
+level = ds_grid_create(113,3);
+ds_grid_add(level,FighterWeapon[1,0],1,1)
+ds_grid_add(level,FighterWeapon[1,1],1,0)
+ds_grid_add(level,FighterWeapon[1,2],1,2)
+ds_grid_add(level,FighterWeapon[1,3],1,4)
+ds_grid_add(level,FighterWeapon[1,4],1,0)
+ds_grid_add(level,FighterWeapon[1,5],1,2)
+ds_grid_add(level,FighterWeapon[1,6],1,-1)
+ds_grid_add(level,FighterWeapon[1,0],2,1)
+ds_grid_add(level,FighterWeapon[1,1],2,1)
+ds_grid_add(level,FighterWeapon[1,2],2,1)
+ds_grid_add(level,FighterWeapon[1,3],2,1)
+ds_grid_add(level,FighterWeapon[1,4],2,1)
+ds_grid_add(level,FighterWeapon[1,5],2,1)
+ds_grid_add(level,FighterWeapon[1,6],2,1)
+ds_grid_add(level,FighterWeapon[1,0],3,1)
+ds_grid_add(level,FighterWeapon[1,1],3,1)
+ds_grid_add(level,FighterWeapon[1,2],3,1)
+ds_grid_add(level,FighterWeapon[1,3],3,1)
+ds_grid_add(level,FighterWeapon[1,4],3,1)
+ds_grid_add(level,FighterWeapon[1,5],3,1)
+ds_grid_add(level,FighterWeapon[1,6],3,1)
 
+ds_grid_add(level,FighterWeapon[2,0],1,1)
+ds_grid_add(level,FighterWeapon[2,1],1,1)
+ds_grid_add(level,FighterWeapon[2,2],1,1)
+ds_grid_add(level,FighterWeapon[2,3],1,1)
+ds_grid_add(level,FighterWeapon[2,4],1,1)
+ds_grid_add(level,FighterWeapon[2,5],1,1)
+ds_grid_add(level,FighterWeapon[2,6],1,1)
+ds_grid_add(level,FighterWeapon[2,0],2,1)
+ds_grid_add(level,FighterWeapon[2,1],2,1)
+ds_grid_add(level,FighterWeapon[2,2],2,1)
+ds_grid_add(level,FighterWeapon[2,3],2,1)
+ds_grid_add(level,FighterWeapon[2,4],2,1)
+ds_grid_add(level,FighterWeapon[2,5],2,1)
+ds_grid_add(level,FighterWeapon[2,6],2,1)
+ds_grid_add(level,FighterWeapon[2,0],3,1)
+ds_grid_add(level,FighterWeapon[2,1],3,1)
+ds_grid_add(level,FighterWeapon[2,2],3,1)
+ds_grid_add(level,FighterWeapon[2,3],3,1)
+ds_grid_add(level,FighterWeapon[2,4],3,1)
+ds_grid_add(level,FighterWeapon[2,5],3,1)
+ds_grid_add(level,FighterWeapon[2,6],3,1)
+
+ds_grid_add(level,FighterWeapon[3,0],1,1)
+ds_grid_add(level,FighterWeapon[3,1],1,1)
+ds_grid_add(level,FighterWeapon[3,2],1,1)
+ds_grid_add(level,FighterWeapon[3,3],1,1)
+ds_grid_add(level,FighterWeapon[3,4],1,1)
+ds_grid_add(level,FighterWeapon[3,5],1,1)
+ds_grid_add(level,FighterWeapon[3,6],1,1)
+ds_grid_add(level,FighterWeapon[3,0],2,1)
+ds_grid_add(level,FighterWeapon[3,1],2,1)
+ds_grid_add(level,FighterWeapon[3,2],2,1)
+ds_grid_add(level,FighterWeapon[3,3],2,1)
+ds_grid_add(level,FighterWeapon[3,4],2,1)
+ds_grid_add(level,FighterWeapon[3,5],2,1)
+ds_grid_add(level,FighterWeapon[3,6],2,1)
+ds_grid_add(level,FighterWeapon[3,0],3,1)
+ds_grid_add(level,FighterWeapon[3,1],3,1)
+ds_grid_add(level,FighterWeapon[3,2],3,1)
+ds_grid_add(level,FighterWeapon[3,3],3,1)
+ds_grid_add(level,FighterWeapon[3,4],3,1)
+ds_grid_add(level,FighterWeapon[3,5],3,1)
+ds_grid_add(level,FighterWeapon[3,6],3,1)
+
+ds_grid_add(level,MageWeapon[1,0],1,1)
+ds_grid_add(level,MageWeapon[1,1],1,1)
+ds_grid_add(level,MageWeapon[1,2],1,1)
+ds_grid_add(level,MageWeapon[1,3],1,1)
+ds_grid_add(level,MageWeapon[1,4],1,1)
+ds_grid_add(level,MageWeapon[1,5],1,1)
+ds_grid_add(level,MageWeapon[1,6],1,1)
+ds_grid_add(level,MageWeapon[1,0],2,1)
+ds_grid_add(level,MageWeapon[1,1],2,1)
+ds_grid_add(level,MageWeapon[1,2],2,1)
+ds_grid_add(level,MageWeapon[1,3],2,1)
+ds_grid_add(level,MageWeapon[1,4],2,1)
+ds_grid_add(level,MageWeapon[1,5],2,1)
+ds_grid_add(level,MageWeapon[1,6],2,1)
+ds_grid_add(level,MageWeapon[1,0],3,1)
+ds_grid_add(level,MageWeapon[1,1],3,1)
+ds_grid_add(level,MageWeapon[1,2],3,1)
+ds_grid_add(level,MageWeapon[1,3],3,1)
+ds_grid_add(level,MageWeapon[1,4],3,1)
+ds_grid_add(level,MageWeapon[1,5],3,1)
+ds_grid_add(level,MageWeapon[1,6],3,1)
+
+ds_grid_add(level,MageWeapon[2,0],1,1)
+ds_grid_add(level,MageWeapon[2,1],1,1)
+ds_grid_add(level,MageWeapon[2,2],1,1)
+ds_grid_add(level,MageWeapon[2,3],1,1)
+ds_grid_add(level,MageWeapon[2,4],1,1)
+ds_grid_add(level,MageWeapon[2,5],1,1)
+ds_grid_add(level,MageWeapon[2,6],1,1)
+ds_grid_add(level,MageWeapon[2,0],2,1)
+ds_grid_add(level,MageWeapon[2,1],2,1)
+ds_grid_add(level,MageWeapon[2,2],2,1)
+ds_grid_add(level,MageWeapon[2,3],2,1)
+ds_grid_add(level,MageWeapon[2,4],2,1)
+ds_grid_add(level,MageWeapon[2,5],2,1)
+ds_grid_add(level,MageWeapon[2,6],2,1)
+ds_grid_add(level,MageWeapon[2,0],3,1)
+ds_grid_add(level,MageWeapon[2,1],3,1)
+ds_grid_add(level,MageWeapon[2,2],3,1)
+ds_grid_add(level,MageWeapon[2,3],3,1)
+ds_grid_add(level,MageWeapon[2,4],3,1)
+ds_grid_add(level,MageWeapon[2,5],3,1)
+ds_grid_add(level,MageWeapon[2,6],3,1)
+
+ds_grid_add(level,MageWeapon[3,0],1,1)
+ds_grid_add(level,MageWeapon[3,1],1,1)
+ds_grid_add(level,MageWeapon[3,2],1,1)
+ds_grid_add(level,MageWeapon[3,3],1,1)
+ds_grid_add(level,MageWeapon[3,4],1,1)
+ds_grid_add(level,MageWeapon[3,5],1,1)
+ds_grid_add(level,MageWeapon[3,6],1,1)
+ds_grid_add(level,MageWeapon[3,0],2,1)
+ds_grid_add(level,MageWeapon[3,1],2,1)
+ds_grid_add(level,MageWeapon[3,2],2,1)
+ds_grid_add(level,MageWeapon[3,3],2,1)
+ds_grid_add(level,MageWeapon[3,4],2,1)
+ds_grid_add(level,MageWeapon[3,5],2,1)
+ds_grid_add(level,MageWeapon[3,6],2,1)
+ds_grid_add(level,MageWeapon[3,0],3,1)
+ds_grid_add(level,MageWeapon[3,1],3,1)
+ds_grid_add(level,MageWeapon[3,2],3,1)
+ds_grid_add(level,MageWeapon[3,3],3,1)
+ds_grid_add(level,MageWeapon[3,4],3,1)
+ds_grid_add(level,MageWeapon[3,5],3,1)
+ds_grid_add(level,MageWeapon[3,6],3,1)
+
+ds_grid_add(level,BardWeapon[1,0],1,1)
+ds_grid_add(level,BardWeapon[1,1],1,1)
+ds_grid_add(level,BardWeapon[1,2],1,1)
+ds_grid_add(level,BardWeapon[1,3],1,1)
+ds_grid_add(level,BardWeapon[1,4],1,1)
+ds_grid_add(level,BardWeapon[1,5],1,1)
+ds_grid_add(level,BardWeapon[1,6],1,1)
+ds_grid_add(level,BardWeapon[1,0],2,1)
+ds_grid_add(level,BardWeapon[1,1],2,1)
+ds_grid_add(level,BardWeapon[1,2],2,1)
+ds_grid_add(level,BardWeapon[1,3],2,1)
+ds_grid_add(level,BardWeapon[1,4],2,1)
+ds_grid_add(level,BardWeapon[1,5],2,1)
+ds_grid_add(level,BardWeapon[1,6],2,1)
+ds_grid_add(level,BardWeapon[1,0],3,1)
+ds_grid_add(level,BardWeapon[1,1],3,1)
+ds_grid_add(level,BardWeapon[1,2],3,1)
+ds_grid_add(level,BardWeapon[1,3],3,1)
+ds_grid_add(level,BardWeapon[1,4],3,1)
+ds_grid_add(level,BardWeapon[1,5],3,1)
+ds_grid_add(level,BardWeapon[1,6],3,1)
+
+ds_grid_add(level,BardWeapon[2,0],1,1)
+ds_grid_add(level,BardWeapon[2,1],1,1)
+ds_grid_add(level,BardWeapon[2,2],1,1)
+ds_grid_add(level,BardWeapon[2,3],1,1)
+ds_grid_add(level,BardWeapon[2,4],1,1)
+ds_grid_add(level,BardWeapon[2,5],1,1)
+ds_grid_add(level,BardWeapon[2,6],1,1)
+ds_grid_add(level,BardWeapon[2,0],2,1)
+ds_grid_add(level,BardWeapon[2,1],2,1)
+ds_grid_add(level,BardWeapon[2,2],2,1)
+ds_grid_add(level,BardWeapon[2,3],2,1)
+ds_grid_add(level,BardWeapon[2,4],2,1)
+ds_grid_add(level,BardWeapon[2,5],2,1)
+ds_grid_add(level,BardWeapon[2,6],2,1)
+ds_grid_add(level,BardWeapon[2,0],3,1)
+ds_grid_add(level,BardWeapon[2,1],3,1)
+ds_grid_add(level,BardWeapon[2,2],3,1)
+ds_grid_add(level,BardWeapon[2,3],3,1)
+ds_grid_add(level,BardWeapon[2,4],3,1)
+ds_grid_add(level,BardWeapon[2,5],3,1)
+ds_grid_add(level,BardWeapon[2,6],3,1)
+
+ds_grid_add(level,BardWeapon[3,0],1,1)
+ds_grid_add(level,BardWeapon[3,1],1,1)
+ds_grid_add(level,BardWeapon[3,2],1,1)
+ds_grid_add(level,BardWeapon[3,3],1,1)
+ds_grid_add(level,BardWeapon[3,4],1,1)
+ds_grid_add(level,BardWeapon[3,5],1,1)
+ds_grid_add(level,BardWeapon[3,6],1,1)
+ds_grid_add(level,BardWeapon[3,0],2,1)
+ds_grid_add(level,BardWeapon[3,1],2,1)
+ds_grid_add(level,BardWeapon[3,2],2,1)
+ds_grid_add(level,BardWeapon[3,3],2,1)
+ds_grid_add(level,BardWeapon[3,4],2,1)
+ds_grid_add(level,BardWeapon[3,5],2,1)
+ds_grid_add(level,BardWeapon[3,6],2,1)
+ds_grid_add(level,BardWeapon[3,0],3,1)
+ds_grid_add(level,BardWeapon[3,1],3,1)
+ds_grid_add(level,BardWeapon[3,2],3,1)
+ds_grid_add(level,BardWeapon[3,3],3,1)
+ds_grid_add(level,BardWeapon[3,4],3,1)
+ds_grid_add(level,BardWeapon[3,5],3,1)
+ds_grid_add(level,BardWeapon[3,6],3,1)
+
+ds_grid_add(level,ArcherWeapon[1,0],1,1)
+ds_grid_add(level,ArcherWeapon[1,1],1,1)
+ds_grid_add(level,ArcherWeapon[1,2],1,1)
+ds_grid_add(level,ArcherWeapon[1,3],1,1)
+ds_grid_add(level,ArcherWeapon[1,4],1,1)
+ds_grid_add(level,ArcherWeapon[1,5],1,1)
+ds_grid_add(level,ArcherWeapon[1,6],1,1)
+ds_grid_add(level,ArcherWeapon[1,0],2,1)
+ds_grid_add(level,ArcherWeapon[1,1],2,1)
+ds_grid_add(level,ArcherWeapon[1,2],2,1)
+ds_grid_add(level,ArcherWeapon[1,3],2,1)
+ds_grid_add(level,ArcherWeapon[1,4],2,1)
+ds_grid_add(level,ArcherWeapon[1,5],2,1)
+ds_grid_add(level,ArcherWeapon[1,6],2,1)
+ds_grid_add(level,ArcherWeapon[1,0],3,1)
+ds_grid_add(level,ArcherWeapon[1,1],3,1)
+ds_grid_add(level,ArcherWeapon[1,2],3,1)
+ds_grid_add(level,ArcherWeapon[1,3],3,1)
+ds_grid_add(level,ArcherWeapon[1,4],3,1)
+ds_grid_add(level,ArcherWeapon[1,5],3,1)
+ds_grid_add(level,ArcherWeapon[1,6],3,1)
+
+ds_grid_add(level,ArcherWeapon[2,0],1,1)
+ds_grid_add(level,ArcherWeapon[2,1],1,1)
+ds_grid_add(level,ArcherWeapon[2,2],1,1)
+ds_grid_add(level,ArcherWeapon[2,3],1,1)
+ds_grid_add(level,ArcherWeapon[2,4],1,1)
+ds_grid_add(level,ArcherWeapon[2,5],1,1)
+ds_grid_add(level,ArcherWeapon[2,6],1,1)
+ds_grid_add(level,ArcherWeapon[2,0],2,1)
+ds_grid_add(level,ArcherWeapon[2,1],2,1)
+ds_grid_add(level,ArcherWeapon[2,2],2,1)
+ds_grid_add(level,ArcherWeapon[2,3],2,1)
+ds_grid_add(level,ArcherWeapon[2,4],2,1)
+ds_grid_add(level,ArcherWeapon[2,5],2,1)
+ds_grid_add(level,ArcherWeapon[2,6],2,1)
+ds_grid_add(level,ArcherWeapon[2,0],3,1)
+ds_grid_add(level,ArcherWeapon[2,1],3,1)
+ds_grid_add(level,ArcherWeapon[2,2],3,1)
+ds_grid_add(level,ArcherWeapon[2,3],3,1)
+ds_grid_add(level,ArcherWeapon[2,4],3,1)
+ds_grid_add(level,ArcherWeapon[2,5],3,1)
+ds_grid_add(level,ArcherWeapon[2,6],3,1)
+
+ds_grid_add(level,ArcherWeapon[3,0],1,1)
+ds_grid_add(level,ArcherWeapon[3,1],1,1)
+ds_grid_add(level,ArcherWeapon[3,2],1,1)
+ds_grid_add(level,ArcherWeapon[3,3],1,1)
+ds_grid_add(level,ArcherWeapon[3,4],1,1)
+ds_grid_add(level,ArcherWeapon[3,5],1,1)
+ds_grid_add(level,ArcherWeapon[3,6],1,1)
+ds_grid_add(level,ArcherWeapon[3,0],2,1)
+ds_grid_add(level,ArcherWeapon[3,1],2,1)
+ds_grid_add(level,ArcherWeapon[3,2],2,1)
+ds_grid_add(level,ArcherWeapon[3,3],2,1)
+ds_grid_add(level,ArcherWeapon[3,4],2,1)
+ds_grid_add(level,ArcherWeapon[3,5],2,1)
+ds_grid_add(level,ArcherWeapon[3,6],2,1)
+ds_grid_add(level,ArcherWeapon[3,0],3,1)
+ds_grid_add(level,ArcherWeapon[3,1],3,1)
+ds_grid_add(level,ArcherWeapon[3,2],3,1)
+ds_grid_add(level,ArcherWeapon[3,3],3,1)
+ds_grid_add(level,ArcherWeapon[3,4],3,1)
+ds_grid_add(level,ArcherWeapon[3,5],3,1)
+ds_grid_add(level,ArcherWeapon[3,6],3,1)
+
+ds_grid_add(level,RogueWeapon[1,0],1,1)
+ds_grid_add(level,RogueWeapon[1,1],1,1)
+ds_grid_add(level,RogueWeapon[1,2],1,1)
+ds_grid_add(level,RogueWeapon[1,3],1,1)
+ds_grid_add(level,RogueWeapon[1,4],1,1)
+ds_grid_add(level,RogueWeapon[1,5],1,1)
+ds_grid_add(level,RogueWeapon[1,6],1,1)
+ds_grid_add(level,RogueWeapon[1,0],2,1)
+ds_grid_add(level,RogueWeapon[1,1],2,1)
+ds_grid_add(level,RogueWeapon[1,2],2,1)
+ds_grid_add(level,RogueWeapon[1,3],2,1)
+ds_grid_add(level,RogueWeapon[1,4],2,1)
+ds_grid_add(level,RogueWeapon[1,5],2,1)
+ds_grid_add(level,RogueWeapon[1,6],2,1)
+ds_grid_add(level,RogueWeapon[1,0],3,1)
+ds_grid_add(level,RogueWeapon[1,1],3,1)
+ds_grid_add(level,RogueWeapon[1,2],3,1)
+ds_grid_add(level,RogueWeapon[1,3],3,1)
+ds_grid_add(level,RogueWeapon[1,4],3,1)
+ds_grid_add(level,RogueWeapon[1,5],3,1)
+ds_grid_add(level,RogueWeapon[1,6],3,1)
+
+ds_grid_add(level,RogueWeapon[2,0],1,1)
+ds_grid_add(level,RogueWeapon[2,1],1,1)
+ds_grid_add(level,RogueWeapon[2,2],1,1)
+ds_grid_add(level,RogueWeapon[2,3],1,1)
+ds_grid_add(level,RogueWeapon[2,4],1,1)
+ds_grid_add(level,RogueWeapon[2,5],1,1)
+ds_grid_add(level,RogueWeapon[2,6],1,1)
+ds_grid_add(level,RogueWeapon[2,0],2,1)
+ds_grid_add(level,RogueWeapon[2,1],2,1)
+ds_grid_add(level,RogueWeapon[2,2],2,1)
+ds_grid_add(level,RogueWeapon[2,3],2,1)
+ds_grid_add(level,RogueWeapon[2,4],2,1)
+ds_grid_add(level,RogueWeapon[2,5],2,1)
+ds_grid_add(level,RogueWeapon[2,6],2,1)
+ds_grid_add(level,RogueWeapon[2,0],3,1)
+ds_grid_add(level,RogueWeapon[2,1],3,1)
+ds_grid_add(level,RogueWeapon[2,2],3,1)
+ds_grid_add(level,RogueWeapon[2,3],3,1)
+ds_grid_add(level,RogueWeapon[2,4],3,1)
+ds_grid_add(level,RogueWeapon[2,5],3,1)
+ds_grid_add(level,RogueWeapon[2,6],3,1)
+
+ds_grid_add(level,RogueWeapon[3,0],1,1)
+ds_grid_add(level,RogueWeapon[3,1],1,1)
+ds_grid_add(level,RogueWeapon[3,2],1,1)
+ds_grid_add(level,RogueWeapon[3,3],1,1)
+ds_grid_add(level,RogueWeapon[3,4],1,1)
+ds_grid_add(level,RogueWeapon[3,5],1,1)
+ds_grid_add(level,RogueWeapon[3,6],1,1)
+ds_grid_add(level,RogueWeapon[3,0],2,1)
+ds_grid_add(level,RogueWeapon[3,1],2,1)
+ds_grid_add(level,RogueWeapon[3,2],2,1)
+ds_grid_add(level,RogueWeapon[3,3],2,1)
+ds_grid_add(level,RogueWeapon[3,4],2,1)
+ds_grid_add(level,RogueWeapon[3,5],2,1)
+ds_grid_add(level,RogueWeapon[3,6],2,1)
+ds_grid_add(level,RogueWeapon[3,0],3,1)
+ds_grid_add(level,RogueWeapon[3,1],3,1)
+ds_grid_add(level,RogueWeapon[3,2],3,1)
+ds_grid_add(level,RogueWeapon[3,3],3,1)
+ds_grid_add(level,RogueWeapon[3,4],3,1)
+ds_grid_add(level,RogueWeapon[3,5],3,1)
+ds_grid_add(level,RogueWeapon[3,6],3,1)
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="3">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>ds_grid_destroy(level);
 </string>
           </argument>
         </arguments>
