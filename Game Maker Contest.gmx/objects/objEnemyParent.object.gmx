@@ -119,25 +119,29 @@ if point_in_circle(objPlayer.x,objPlayer.y,x,y,50)
     if (go = 1 and walk = true and place_empty(x,y+11))
     {
         y += 0.333
+        dir = "down"
         node = 0
     }else if (go = 1 and walk = true and !place_empty(x,y+11)) go = irandom_range(0,4)
     if (go = 2 and walk = true and place_empty(x-11,y))
     {
         x -= 0.333
+        dir = "left"
         node = 3
     }else if (go = 2 and walk = true and !place_empty(x-11,y)) go = irandom_range(0,4)
     if (go = 3 and walk = true and place_empty(x+11,y))
     {
         x += 0.333
+        dir = "right"
         node = 6
     }else if (go = 3 and walk = true and !place_empty(x+11,y)) go = irandom_range(0,4)
     if (go = 4 and walk = true and place_empty(x,y-11))
     {
         y -= 0.333
+        dir = "left"
         node = 9
     }else if (go = 4 and walk = true and !place_empty(x,y-11)) go = irandom_range(0,4)
 }
-    sub += .1
+    sub += .3
 if sub &gt;= 3 sub = 0
     flip -= 1
 if flip &lt;= 0

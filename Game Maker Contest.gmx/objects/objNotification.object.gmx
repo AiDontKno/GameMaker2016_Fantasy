@@ -27,7 +27,7 @@
             <kind>1</kind>
             <string>///Initialization
 //                                       //----//                                       //
-                                      TESTING = true
+                                      TESTING = false
 //                                       //----//                                       //
 if TESTING = false{
     LineY____ = ""
@@ -3294,7 +3294,10 @@ if a &gt;= 99 or a &lt;= 0 a = 0.01
         a += 0.1
                     ////////////////////////////////////////////////
 v += 0.1
-if CellState = 0 and distance_to_object(objPlayer) &lt;= 750
+if distance_to_object(objPlayer) &gt;500{
+    visible = false
+}else visible = true
+if CellState = 0 and distance_to_object(objPlayer) &lt;= 500
 {
     draw_text(x,y-12,"Press SPACE")
     draw_set_colour(c_black)

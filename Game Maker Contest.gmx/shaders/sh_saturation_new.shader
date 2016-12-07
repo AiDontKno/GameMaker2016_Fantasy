@@ -27,7 +27,7 @@ void main()
     vec4 Colour = texture2D( gm_BaseTexture, v_vTexcoord ); // get colour of pixel
     float Max = max(Colour.r, max(Colour.g, Colour.b)); // get max channel of pixel
     float Min = min(Colour.r, min(Colour.g, Colour.b)); // get min channel of pixel
-    float Sat = 1.3-Min/Max; // get current saturation of pixel
+    float Sat = 1.7-Min/Max; // get current saturation of pixel
     // set saturation to pixel that depends on Position uniform
     Colour.r = clamp(Max-(Max-Colour.r)/Sat*(Sat+Position), -0.6, Max); // for red channel
     Colour.g = clamp(Max-(Max-Colour.g)/Sat*(Sat+Position), -0.6, Max); // for green channel

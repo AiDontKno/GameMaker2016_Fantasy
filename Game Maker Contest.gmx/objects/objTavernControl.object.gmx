@@ -76,6 +76,7 @@ nameSel = ""
             <string>///Change room temp
 if keyboard_check_pressed(ord("L")){
     show_message("room = tavern")
+    with objPlayer lastRoom = "rm_Tutorial"
     with instance_create(x,y,objRoomTransfer) targetRoom = rm_tavern
 }
 
@@ -119,12 +120,12 @@ draw_set_color(c_black)
 draw_rectangle(0,0,room_width,room_height,0)
 
 
-if keyboard_check_pressed(vk_up) and allySel &gt; 0{
+if keyboard_check_pressed(ord("W")) and allySel &gt; 0{
     allySel --
 
 }
 
-if keyboard_check_pressed(vk_down) and allySel &lt; 2{
+if keyboard_check_pressed(ord("S")) and allySel &lt; 2{
     allySel ++
     
 }
@@ -146,7 +147,7 @@ if allySel = 2{
    nameSel = "Ally 2"
 }else ally2 = false
 
-if allySel = 0 and keyboard_check_pressed(vk_left) and tavernSel3 &gt;0 and objPlayer.lastRoom = "rm_Tutorial"{
+if allySel = 0 and keyboard_check_pressed(ord("A")) and tavernSel3 &gt;0 and objPlayer.lastRoom = "rm_Tutorial"{
     tavernSel3 --
     global.allyUsed[1,2] = false
     global.allyUsed[2,2] = false
@@ -156,7 +157,7 @@ if allySel = 0 and keyboard_check_pressed(vk_left) and tavernSel3 &gt;0 and objP
     
 }
 
-if allySel = 0 and keyboard_check_pressed(vk_right) and tavernSel3 &lt;4 and objPlayer.lastRoom = "rm_Tutorial"{
+if allySel = 0 and keyboard_check_pressed(ord("D")) and tavernSel3 &lt;4 and objPlayer.lastRoom = "rm_Tutorial"{
     tavernSel3 ++
     global.allyUsed[1,2] = false
     global.allyUsed[2,2] = false
@@ -165,7 +166,7 @@ if allySel = 0 and keyboard_check_pressed(vk_right) and tavernSel3 &lt;4 and obj
     global.allyUsed[5,2] = false
 }
 
-if allySel = 1 and keyboard_check_pressed(vk_left) and tavernSel &gt;0{
+if allySel = 1 and keyboard_check_pressed(ord("A")) and tavernSel &gt;0{
     tavernSel --
     global.allyUsed[1,0] = false
     global.allyUsed[2,0] = false
@@ -175,7 +176,7 @@ if allySel = 1 and keyboard_check_pressed(vk_left) and tavernSel &gt;0{
     
 }
 
-if allySel = 1 and keyboard_check_pressed(vk_right) and tavernSel &lt;4{
+if allySel = 1 and keyboard_check_pressed(ord("D")) and tavernSel &lt;4{
     tavernSel ++
     global.allyUsed[1,0] = false
     global.allyUsed[2,0] = false
@@ -184,7 +185,7 @@ if allySel = 1 and keyboard_check_pressed(vk_right) and tavernSel &lt;4{
     global.allyUsed[5,0] = false
 }
 
-if allySel = 2 and keyboard_check_pressed(vk_left) and tavernSel2 &gt;0{
+if allySel = 2 and keyboard_check_pressed(ord("A")) and tavernSel2 &gt;0{
     tavernSel2 --
     global.allyUsed[1,1] = false
     global.allyUsed[2,1] = false
@@ -193,7 +194,7 @@ if allySel = 2 and keyboard_check_pressed(vk_left) and tavernSel2 &gt;0{
     global.allyUsed[5,1] = false
 }
 
-if allySel = 2 and keyboard_check_pressed(vk_right) and tavernSel2 &lt;4{
+if allySel = 2 and keyboard_check_pressed(ord("D")) and tavernSel2 &lt;4{
     tavernSel2 ++
     global.allyUsed[1,1] = false
     global.allyUsed[2,1] = false
@@ -280,22 +281,23 @@ if tavernSel2 = 4 and allySel = 2{
 draw_set_valign(fa_center)
 draw_set_halign(fa_left)
 draw_set_color(c_white)
+draw_rectangle(16,240+yy,104,328+yy,0)
 draw_rectangle(16,32+yy,104,120+yy,0)
 
 if global.allyUsed[1,2] = true{
-    draw_sprite(sprFighterHS,0,68-6,268+yy-12)
+    draw_sprite(sprFighterHS,0,68-4,268+yy+4)
 }
 if global.allyUsed[2,2] = true{
-    draw_sprite(sprMageHS,0,68-6,268+yy-12)
+    draw_sprite(sprMageHS,0,68,268+yy)
 }
 if global.allyUsed[3,2] = true{
-    draw_sprite(sprBardHS,0,68-6,268+yy-12)
+    draw_sprite(sprBardHS,0,68,268+yy)
 }
 if global.allyUsed[4,2] = true{
-    draw_sprite(sprFighterHS,0,68-6,268+yy-12)
+    draw_sprite(sprFighterHS,0,68,268+yy)
 }
 if global.allyUsed[5,2] = true{
-    draw_sprite(sprFighterHS,0,68-6,268+yy-12)
+    draw_sprite(sprFighterHS,0,68,268+yy)
 }
 
 if global.allyUsed[1,1] = true{
@@ -330,7 +332,7 @@ if global.allyUsed[4,0] = true{
 if global.allyUsed[5,0] = true{
     draw_sprite(sprRogueAllyHS,0,68-6,180+yy-4)
 }
-draw_rectangle(16,240+yy,104,328+yy,0)
+
 
 
 
@@ -469,38 +471,40 @@ if room = rm_tavern{
     draw_text(130,42,"Selected: " + nameSel)
     draw_set_font(fntTextBox)
     if allySel = 1{
-    draw_text(130,77,("Class: " + objAlly1.class))
-    draw_text(130,92,("Weapon: " + objAlly1.weapon))
-    draw_text(130,107,("LEVEL: "  + string(objAlly1.level)))
-    draw_text(130,122,("HP:  " + string(objAlly1.hp)))
-    draw_text(130,137,("MP: " + string(objAlly1.mp)))
-    draw_text(130,152,("INT: " + string(objAlly1.int)))
-    draw_text(130,167,("STR: " + string(objAlly1.str)))
-    draw_text(130,182,("ACC: " + string(objAlly1.acc)))
-    draw_text(130,197,("DEX: " + string(objAlly1.dex)))
+    draw_text(130,77-15,("Class: " + objAlly1.class))
+    draw_text(130,92-15,("Weapon: " + objAlly1.weapon))
+    draw_text(130,107-15,("LEVEL: "  + string(objAlly1.level)))
+    draw_text(130,122-15,("HP:  " + string(objAlly1.hp)))
+    draw_text(130,137-15,("MP: " + string(objAlly1.mp)))
+    draw_text(130,152-15,("INT: " + string(objAlly1.int)))
+    draw_text(130,167-15,("STR: " + string(objAlly1.str)))
+    draw_text(130,182-15,("ACC: " + string(objAlly1.acc)))
+    draw_text(130,197-15,("DEX: " + string(objAlly1.dex)))
     
     
     }
     if allySel = 2{
-    draw_text(130,62,("Class: " + objAlly2.class))
-    draw_text(130,82,("Weapon: " + objAlly2.weapon))
-    draw_text(130,102,("HP: "  + string(objAlly2.hp)))
-    draw_text(130,122,("MP:  " + string(objAlly2.mp)))
-    draw_text(130,142,("INT: " + string(objAlly2.int)))
-    draw_text(130,162,("STR: " + string(objAlly2.str)))
-    draw_text(130,182,("ACC: " + string(objAlly2.acc)))
-    draw_text(130,202,("DEX: " + string(objAlly2.dex)))
+    draw_text(130,77-15,("Class: " + objAlly2.class))
+    draw_text(130,92-15,("Weapon: " + objAlly2.weapon))
+    draw_text(130,107-15,("LEVEL: "  + string(objAlly2.level)))
+    draw_text(130,122-15,("HP:  " + string(objAlly2.hp)))
+    draw_text(130,137-15,("MP: " + string(objAlly2.mp)))
+    draw_text(130,152-15,("INT: " + string(objAlly2.int)))
+    draw_text(130,167-15,("STR: " + string(objAlly2.str)))
+    draw_text(130,182-15,("ACC: " + string(objAlly2.acc)))
+    draw_text(130,197-15,("DEX: " + string(objAlly2.dex)))
     }
     
     if allySel = 0{
-    draw_text(130,62,("Class: " + objPlayer.class))
-    draw_text(130,82,("Weapon: " + objPlayer.weapon))
-    draw_text(130,102,("HP: "  + string(objPlayer.hp)))
-    draw_text(130,122,("MP:  " + string(objPlayer.mp)))
-    draw_text(130,142,("INT: " + string(objPlayer.int)))
-    draw_text(130,162,("STR: " + string(objPlayer.str)))
-    draw_text(130,182,("ACC: " + string(objPlayer.acc)))
-    draw_text(130,202,("DEX: " + string(objPlayer.dex)))
+    draw_text(130,77-15,("Class: " + objPlayer.class))
+    draw_text(130,92-15,("Weapon: " + objPlayer.weapon))
+    draw_text(130,107-15,("LEVEL: "  + string(objPlayer.level)))
+    draw_text(130,122-15,("HP:  " + string(objPlayer.hp)))
+    draw_text(130,137-15,("MP: " + string(objPlayer.mp)))
+    draw_text(130,152-15,("INT: " + string(objPlayer.int)))
+    draw_text(130,167-15,("STR: " + string(objPlayer.str)))
+    draw_text(130,182-15,("ACC: " + string(objPlayer.acc)))
+    draw_text(130,197-15,("DEX: " + string(objPlayer.dex)))
     }
 
 }

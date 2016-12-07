@@ -43,7 +43,8 @@ if room = rmSplash{
 }else audio_stop_sound(sndGoodEnd)
 
 if room = rm_tavern{
-    audio_play_sound(sndTavern,0,1)
+    if audio_is_playing(sndTavern){
+    }else audio_play_sound(sndTavern,0,1)
 }else audio_stop_sound(sndTavern)
 
 if room = rm_TutFight or room = rm_MFight{

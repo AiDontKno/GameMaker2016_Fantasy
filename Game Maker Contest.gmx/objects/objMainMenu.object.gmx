@@ -72,7 +72,7 @@ jy = 240+15+120+16
 
 
 c = 0
-message = "Once upon a time, there were two brothers named Cain and Abel. They spent their childhood years together before splitting up as adults to explore the world. Cain established a small village in the forest, while Abel gained favour and honour with the old King, eventually succeeding him when he died. Both brothers were happy for each other whenever they communicated, and frequently provided aid for the other when asked. It was a wonderful arrangement... Then what?"
+message = "Once upon a time, there were two brothers named Cain and Abel. They spent their childhood years together before splitting up as adults to explore the world. Cain established a small village in the forest, while Abel gained favour and honour with the old King, eventually succeeding him when he died. Both brothers were happy for each other, and frequently provided aid for the other when asked. It was a wonderful arrangement... Then what?"
 
 
 </string>
@@ -242,7 +242,7 @@ if (((Selected = 2 or Selected = 3) and Credits = false) or Credits = true) and 
                     last_space = 0
                     line = 0
                     if Selected = 2{
-                    message = "Programing: Andrew Truong, Chris Bognar
+                    message = "Programming: Andrew Truong, Chris Bognar
     Sprites: Fatimah Zaidi, Cristian DiBartolomeo
     Music: Shane Santos. Tiles: Chris Bognar
     Maps: Andrew Truong, Fatimah Zaidi, Cristian DiBartolomeo, Chris Bognar"

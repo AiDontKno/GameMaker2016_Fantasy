@@ -147,6 +147,7 @@ global.allyPos[3,1] = 540
 global.allyPos[3,2] = 250 //270
 
 global.EnemyNumber = 0
+
 global.selection[1,0] = true
 global.selection[2,0] = true
 global.selection[3,0] = true
@@ -156,6 +157,14 @@ global.selection[6,0] = true
 global.selection[7,0] = true
 global.selection[8,0] = true
 global.selection[9,0] = true
+global.selection[10,0] = true
+global.selection[11,0] = true
+global.selection[12,0] = true
+global.selection[13,0] = true
+global.selection[14,0] = true
+global.selection[15,0] = true
+global.selection[16,0] = true
+global.selection[17,0] = true
 </string>
           </argument>
         </arguments>
@@ -279,7 +288,7 @@ mp_grid_clear_all(global.enemyFightF)
             <string>///Spawning
 check = true
 if room = rmSplash and tutorial = true{
-    with instance_create(x,y,objRoomTransfer) targetRoom = rm_Tutorial
+    room_goto(rm_Tutorial)
 }
 if room = rm_Tutorial and tutorial = false{
     tutorial = true
@@ -495,25 +504,25 @@ if room = rm_Tutorial and objPlayer.y &lt; 912{
 if objMasterController.check = true and point_in_rectangle(objPlayer.x,objPlayer.y,608,1072,640,1088) and room = rm_Tutorial{
      with objPlayer lastRoom = room_get_name(room)
      with objPlayer lastX = x
-     with objPlayer lastY = y+5
+     with objPlayer lastY = y+10
      with instance_create(x,y,objRoomTransfer) targetRoom = rm_tavern
 }
 if objMasterController.check = true and point_in_rectangle(objPlayer.x,objPlayer.y,544,2320,576,2336) and room = rm_meadow{
      with objPlayer lastRoom = room_get_name(room)
      with objPlayer lastX = x
-     with objPlayer lastY = y+5
+     with objPlayer lastY = y+10
      with instance_create(x,y,objRoomTransfer) targetRoom = rm_tavern
 }
 if objMasterController.check = true and point_in_rectangle(objPlayer.x,objPlayer.y,256,2672,288,2688) and room = rm_Mountain{
      with objPlayer lastRoom = room_get_name(room)
      with objPlayer lastX = x
-     with objPlayer lastY = y+5
+     with objPlayer lastY = y+10
      with instance_create(x,y,objRoomTransfer) targetRoom = rm_tavern
 }
 if objMasterController.check = true and point_in_rectangle(objPlayer.x,objPlayer.y,3424,2800,3456,2816) and room = rm_OutsideCastle{
      with objPlayer lastRoom = room_get_name(room)
      with objPlayer lastX = x
-     with objPlayer lastY = y+5
+     with objPlayer lastY = y+10
      with instance_create(x,y,objRoomTransfer) targetRoom = rm_tavern
 }
 if objMasterController.check = true and (objPlayer.y &lt; 1  ) {
@@ -545,18 +554,29 @@ if objMasterController.check = true and (objPlayer.y &lt; 1  ) {
             if keyboard_check_pressed(vk_escape) and Pause == true
             {
                 Pause = false
+                depth = 0
+                bView = false
                 C = false
             }else if keyboard_check_pressed(vk_escape) and Pause == false
             {
+                depth = -100000000
+                bView = true
                 Pause = true
+                
             }
         }
         if Pause = true
         {
             instance_deactivate_all(true)
+            if room = rm_MFight or room = rm_TutFight or room = rm_FightC or room = rm_FightIC{
+                if bView = true{
+                    view_xview = xa
+                    view_yview = ya-1
+                }
+            }
         }
         if Pause = false instance_activate_all()
-        if (mouse_x = mouse_xprevious or mouse_y = mouse_yprevious) and (keyboard_check_pressed(vk_left) or keyboard_check_pressed(vk_right)) and quitting = true
+        /*if (mouse_x = mouse_xprevious or mouse_y = mouse_yprevious) and (keyboard_check_pressed(vk_left) or keyboard_check_pressed(vk_right)) and quitting = true
         {
             mouseUsage = false
         }
@@ -585,7 +605,7 @@ if objMasterController.check = true and (objPlayer.y &lt; 1  ) {
         
         if Set != -99 Setprevious = Set
         mouse_xprevious = mouse_x
-        mouse_yprevious = mouse_y
+        mouse_yprevious = mouse_y */
         if keyboard_check_pressed(vk_up)
         {
             Set -= 1
@@ -608,7 +628,7 @@ if Pause = true
             draw_set_valign(fa_center)
             draw_set_alpha(1)
             draw_set_colour(c_black)
-            draw_rectangle(view_xview,view_yview,view_xview+view_wview,view_yview+view_hview,false)
+            draw_rectangle(0,0,room_width,room_height,false)
             draw_set_colour(c_white)
             draw_text(view_xview+(view_wview/2),view_yview+(view_hview/2),"Game Paused")
             draw_set_halign(fa_left)
@@ -644,7 +664,7 @@ if Pause = true
                             draw_set_alpha(.2)
                             draw_rectangle(view_xview+xb+1,view_yview+ya,view_xview+xb+1+shift+(amplitude),view_yview+yb,false)
                     draw_set_alpha(.2)
-                    if keyboard_check_pressed(vk_enter)
+                    if keyboard_check_pressed(vk_space)
                     {
                         Pause = false
                     }
@@ -676,7 +696,7 @@ if Pause = true
                             draw_set_alpha(.2)
                             draw_rectangle(view_xview+xd+1,view_yview+yc,view_xview+xd+1+shift+(amplitude),view_yview+yd,false)
                     draw_set_alpha(.2)
-                    if keyboard_check_pressed(vk_enter)
+                    if keyboard_check_pressed(vk_space)
                     {
                         scrSaveFunc()
                         Pause = false
@@ -710,7 +730,7 @@ if Pause = true
                             draw_set_alpha(.2)
                             draw_rectangle(view_xview+xf+1,view_yview+ye,view_xview+xf+1+shift+(amplitude),view_yview+yf,false)
                     draw_set_alpha(.2)
-                    if keyboard_check_pressed(vk_enter)
+                    if keyboard_check_pressed(vk_space)
                     {
                         scrLoadFunc()
                         instance_activate_all()
@@ -744,7 +764,7 @@ if Pause = true
                             draw_set_alpha(.2)
                             draw_rectangle(view_xview+xh+1,view_yview+yg,view_xview+xh+1+shift+(amplitude),view_yview+yh,false)
                     draw_set_alpha(.2)
-                    if keyboard_check_pressed(vk_enter)
+                    if keyboard_check_pressed(vk_space)
                     {
                         
                         Pause = false
@@ -754,7 +774,7 @@ if Pause = true
             draw_rectangle(view_xview+xg,view_yview+yg,view_xview+xh,view_yview+yh,false)
             draw_set_alpha(1)
             draw_set_font(fntTextBox)
-            draw_text(view_xview+xg,view_yview+yg-1,"XE")
+            draw_text(view_xview+xg,view_yview+yg-1,"Stats")
         draw_set_alpha(.1)
                 MAX +=1
                 if point_in_rectangle(mouse_x,mouse_y,view_xview+xi,view_yview+yi,view_xview+xj,view_yview+yj) and mouseUsage = true
@@ -766,7 +786,7 @@ if Pause = true
                     draw_set_alpha(.2)
                     if mouse_check_button_pressed(mb_left)
                     {
-                        room_goto(rmMainMenu)
+                        room_goto(rmSplash)
                         instance_activate_all()
                         Pause = false
                     }
@@ -778,9 +798,9 @@ if Pause = true
                             draw_set_alpha(.2)
                             draw_rectangle(view_xview+xj+1,view_yview+yi,view_xview+xj+1+shift+(amplitude),view_yview+yj,false)
                     draw_set_alpha(.2)
-                    if keyboard_check_pressed(vk_enter)
+                    if keyboard_check_pressed(vk_space)
                     {
-                        room_goto(rmMainMenu)
+                        room_goto(rmSplash)
                         instance_activate_all()
                         Pause = false
                     }
@@ -812,7 +832,7 @@ if Pause = true
                             draw_set_alpha(.2)
                             draw_rectangle(view_xview+xl+1,view_yview+yk,view_xview+xl+1+shift+(amplitude),view_yview+yl,false)
                     draw_set_alpha(.2)
-                    if keyboard_check_pressed(vk_enter)
+                    if keyboard_check_pressed(vk_space)
                     {
                         a -= 1
                         quitting = true
@@ -858,7 +878,7 @@ if Pause = true
                 if SetQ = 0 and mouseUsage = false
                 {
                     draw_set_alpha(.2)
-                    if keyboard_check_pressed(vk_enter)
+                    if keyboard_check_pressed(vk_space)
                     {
                         quitting = false
                     }
@@ -877,7 +897,7 @@ if Pause = true
                 if SetQ = 1 and mouseUsage = false
                 {
                     draw_set_alpha(.2)
-                    if keyboard_check_pressed(vk_enter)
+                    if keyboard_check_pressed(vk_space)
                     {
                         instance_activate_all()
                         game_end()
@@ -917,7 +937,7 @@ if Pause = true
           <argument>
             <kind>1</kind>
             <string>///global attacker
-if Pause = false{
+if Pause = false and (room = rm_MFight or room = rm_TutFight or room = rm_FightC or room = rm_FightIC){
 if objPlayer.attacking = true{
     global.attacker = 2
 }   

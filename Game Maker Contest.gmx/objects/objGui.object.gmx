@@ -57,10 +57,10 @@ draw_rectangle(0,270,640,360,0)
 draw_set_color(c_black)
 draw_set_valign(fa_middle)
 if objPlayer.attacking = true or objAlly1.attacking = true or objAlly2.attacking = true{
-if keyboard_check_pressed(vk_up){
+if keyboard_check_pressed(ord("W")){
             sel --
         }
-    if keyboard_check_pressed(vk_down){
+    if keyboard_check_pressed(ord("S")){
             sel ++
         }
 }
@@ -73,7 +73,24 @@ draw_text(75,45 + 270, "Cain")
 draw_sprite(sprHpBg,1,125 + 15 + 50,45 + 270 - 5)
 draw_sprite_ext(sprHpInner,1,125 + 15 + 50,45 + 270 - 5,objPlayer.battleHp/objPlayer.hp,1,0,c_white,1)
 draw_sprite(sprHpBorder,1,125 + 50,35.5 + 270 - 5)
-
+    if objPlayer.class = "fighter"{
+        draw_sprite_ext(sprFighterHS,1,50,45 + 270,0.3,0.3,0,-1,255)
+        }
+    if objPlayer.class = "mage"{
+        draw_sprite_ext(sprMageHS,1,50,45 + 270,0.3,0.3,0,-1,255)
+        }
+    if objPlayer.class = "bard"{
+        draw_sprite_ext(sprBardHS,1,50,45 + 270,0.3,0.3,0,-1,255)
+        }
+    if objPlayer.class = "rogue"{
+        draw_sprite_ext(sprFighterHS,1,50,45 + 270,0.3,0.3,0,-1,255)
+        }
+    if objPlayer.class = "archer"{
+        draw_sprite_ext(sprFighterHS,1,50,45 + 270,0.3,0.3,0,-1,255)
+        }
+    if objPlayer.class = "Player"{
+        draw_sprite_ext(sprFighterHS,1,50,45 + 270,0.3,0.3,0,-1,255)
+        }
 
 if objPlayer.attacking = true and gui = true{
     draw_set_color(c_ltgray)

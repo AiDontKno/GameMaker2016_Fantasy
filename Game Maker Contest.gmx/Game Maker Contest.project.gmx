@@ -259,6 +259,14 @@
         <sprite>sprites\sprChickenLeft</sprite>
         <sprite>sprites\sprChickenRight</sprite>
       </sprites>
+      <sprites name="Wolf">
+        <sprite>sprites\sprWolfIdle</sprite>
+        <sprite>sprites\sprWolfAttack</sprite>
+        <sprite>sprites\sorWolfDown</sprite>
+        <sprite>sprites\sprWolfLeft</sprite>
+        <sprite>sprites\sprWolfRight</sprite>
+        <sprite>sprites\sprWolfUp</sprite>
+      </sprites>
     </sprites>
     <sprite>sprites\sprEnemyTarget</sprite>
     <sprite>sprites\sprAllyTarget</sprite>
@@ -306,6 +314,7 @@
     <background>background\castlr</background>
     <background>background\bk_Tavern</background>
     <background>background\ts_forThrone</background>
+    <background>background\bkTree</background>
   </backgrounds>
   <paths name="paths">
     <path>paths\pathCircle</path>
@@ -329,6 +338,7 @@
     <font>fonts\fntText</font>
   </fonts>
   <objects name="objects">
+    <object>objects\objPlayer</object>
     <object>objects\objRoomTransfer</object>
     <object>objects\objMasterController</object>
     <objects name="Combat">
@@ -338,7 +348,6 @@
     </objects>
     <objects name="Player">
       <object>objects\objWeaponMaster</object>
-      <object>objects\objPlayer</object>
       <object>objects\objPlayerAllyFightParent</object>
     </objects>
     <objects name="Allies">
@@ -384,8 +393,8 @@
     <object>objects\objCollision</object>
     <object>objects\objMainMenu</object>
     <object>objects\objTalk</object>
-    <object>objects\objRain</object>
     <object>objects\objNotification</object>
+    <object>objects\objRain</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rmINI</room>
